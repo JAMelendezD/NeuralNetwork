@@ -2,7 +2,6 @@ import random
 import numpy as np
 import pickle
 import gzip
-import numpy as np
 
 
 def load_data():
