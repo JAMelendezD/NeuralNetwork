@@ -22,11 +22,11 @@ def load_data_wrapper():
     test_data = zip(test_inputs, te_d[1])
     return (training_data, validation_data, test_data)
 
+
 def vectorized_result(j):
     e = np.zeros((10, 1))
     e[j] = 1.0
     return e
-
 
 
 def sigmoid(z):
@@ -103,7 +103,7 @@ class Network(object):
             activation = sigmoid(z)
             activations.append(activation)
 
-        delta = self.cost_derivative(activations[-1], y)*sigmoid_prime(zs[-1])
+        delta = cost_derivative(activations[-1], y)*sigmoid_prime(zs[-1])
         nabla_b[-1] = delta
         nabla_w[-1] = np.dot(delta, activations[-2].transpose())
 
